@@ -1,0 +1,8 @@
+'use client';
+
+import { useMemo, useState } from 'react';
+import Link from 'next/link';
+import { notices } from '@/content/notices';
+import { Localized } from './localized';
+
+export function NoticeList() { const [year, setYear] = useState('All'); const years = Array.from(new Set(notices.map((notice) => notice.year))).sort((a, b) => b - a); const results = useMemo(() => notices.filter((notice) => year === 'All' || notice.year === Number(year)), [year]); return <><div className="border-y border-slate-300 bg-[#f1f5f7] p-4"><label className="mr-3 text-sm font-bold" htmlFor="notice-year">Filter by year</label><select id="notice-year" className="border border-slate-500 bg-white px-3 py-1.5" value={year} onChange={(event) => setYear(event.target.value)}><option value="All">All years</option>{years.map((entry) => <option key={entry} value={entry}>{entry}</option>)}</select></div><p role="status" aria-live="polite" className="my-4 text-sm">{results.length} notice{results.length === 1 ? '' : 's'} found.</p><ul className="m-0 list-none divide-y divide-slate-300 border-y border-slate-300 p-0">{results.map((notice) => <li key={notice.slug} className="py-4"><div className="flex flex-wrap items-center gap-2 text-sm"><time dateTime={notice.posted}>{notice.posted}</time><span className="border-l border-slate-400 pl-2">{notice.department}</span>{notice.urgent && <span className="bg-[#8f1d21] px-2 py-.5 font-bold text-white">Urgent</span>}</div><h2 className="my-1 text-xl"><Link href={`/notices/${notice.slug}`}><Localized en={notice.title.en} es={notice.title.es} /></Link></h2><p className="m-0 text-sm"><Localized en={notice.summary.en} es={notice.summary.es} /></p></li>)}</ul></>; }

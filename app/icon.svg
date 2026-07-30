@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <title>Kestrel Basin Water District seal</title>
+  <circle cx="48" cy="48" r="45" fill="#123b5d"/>
+  <circle cx="48" cy="48" r="39" fill="#ffffff"/>
+  <circle cx="48" cy="48" r="32" fill="#123b5d"/>
+  <path d="M48 19C37 34 31 44 31 55a17 17 0 0 0 34 0c0-11-6-21-17-36Z" fill="#c98b16"/>
+  <path d="M39 58c5 5 13 5 18 0" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="3"/>
+  <path d="M36 65c7 4 17 4 24 0" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="2.4"/>
+  <circle cx="17" cy="48" r="2.25" fill="#c98b16"/>
+  <circle cx="79" cy="48" r="2.25" fill="#c98b16"/>
+</svg>
