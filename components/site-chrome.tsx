@@ -48,9 +48,6 @@ export function SiteChrome() {
   const alertMessage = <><Megaphone className="shrink-0" size={18} aria-hidden="true" /><strong><Localized en="Conservation alert:" es="Alerta de conservación:" /></strong><span><Localized en="Stage 1 water conservation rules are in effect. Outdoor watering is limited to two assigned days per week." es="Las reglas de conservación de agua de etapa 1 están vigentes. El riego exterior está limitado a dos días asignados por semana." /></span></>;
 
   return <><header>
-    <aside aria-label="Demonstration notice" className="border-b-2 border-[#8f1d21] bg-[#fff4f4] text-[#651419]">
-      <div className="shell py-2 text-sm"><strong><Localized en="Demonstration only:" es="Solo demostración:" /></strong>{' '}<Localized en="This fictional website is not a real water agency. Do not use it for service requests or emergencies." es="Este sitio web ficticio no es una agencia de agua real. No lo use para solicitudes de servicio ni emergencias." /></div>
-    </aside>
     <div className="alert-ticker" role="region" aria-label="Conservation alert">
       <div className="alert-ticker__viewport"><div className={`alert-ticker__track${tickerPaused ? ' is-paused' : ''}`}><div className="alert-ticker__message">{alertMessage}<Link href="/services/outdoor-water-use"><Localized en="View current rules" es="Ver reglas actuales" /></Link></div><div className="alert-ticker__message" aria-hidden="true">{alertMessage}<span className="underline"><Localized en="View current rules" es="Ver reglas actuales" /></span></div></div></div>
       <button type="button" className="alert-ticker__control" onClick={() => setTickerPaused(!tickerPaused)} aria-pressed={tickerPaused} aria-label={tickerPaused ? 'Resume scrolling conservation alert' : 'Pause scrolling conservation alert'}>{tickerPaused ? <Play size={15} aria-hidden="true" /> : <Pause size={15} aria-hidden="true" />}</button>

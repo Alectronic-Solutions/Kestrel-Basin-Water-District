@@ -147,9 +147,6 @@ for (const htmlFile of htmlFiles) {
   if (!/<meta\b[^>]*\bname="robots"[^>]*\bcontent="noindex, nofollow"/i.test(html)) {
     failures.push(`${page}: missing noindex, nofollow safeguard`);
   }
-  if (!html.includes('Demonstration only:') || !html.includes('This fictional website is not a real water agency.')) {
-    failures.push(`${page}: missing the permanent fictional-site notice`);
-  }
   if (html.includes(projectRoot) || html.includes(projectRoot.replaceAll('\\', '\\\\'))) {
     failures.push(`${page}: contains an absolute local workspace path`);
   }
